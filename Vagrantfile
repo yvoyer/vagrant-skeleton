@@ -9,6 +9,9 @@ Vagrant.configure("2") do |config|
     :linux__nfs_options => ['rw','no_subtree_check','no_root_squash','async']
   config.vm.hostname = "backlog.dev"
 
+  # Allow ssh to go out of vm
+  config.ssh.forward_agent = true
+  
   config.vm.provider :virtualbox do |v|
     v.name = "backlog.dev"
     v.customize [
