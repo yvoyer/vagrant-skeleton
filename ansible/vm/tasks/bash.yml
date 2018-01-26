@@ -16,3 +16,9 @@
           . $f
         done
       fi
+
+- name: bash | Install Completion
+  become: yes
+  apt:
+    pkg: bash-completion
+    state: latest
